@@ -21,7 +21,7 @@ app.use(session({
 }));
 
 if (process.env.NODE_ENV === 'production') {
-    // app.use(express.static(path.resolve(__dirname, 'public')));
+    app.use(express.static(path.resolve(__dirname, 'public')));
 } else {
     
     const corsOptions = {
@@ -45,7 +45,7 @@ app.use('/api/article', articleRoutes);
 const port = process.env.PORT || 3030;
 
 app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'public/index.html'));
+    // res.sendFile(path.join(__dirname, 'public/index.html'));
     
 });
 
